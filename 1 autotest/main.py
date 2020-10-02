@@ -4,10 +4,10 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
-url = "https://hermes-dev.devteam.win/123-pizza-roedermark/5/"
+url = ""
 basket_id = "basket-component"
 
-menu_item_href = "/123-pizza-roedermark/5/cat/"
+menu_item_href = ""
 product_id_menu = "24"
 
 pref_product_in_menu = '//*[@id="products-view-wrapper"]/div/div[2]/div['
@@ -39,8 +39,6 @@ class AddIdBasket(unittest.TestCase):
 
         # ПЕРЕХОДИМ В НУЖНЫЙ ПУНКТ МЕНЮ
         self.driver.find_element_by_css_selector("a[href='" + menu_item_href + product_id_menu + "']").click()
-
-        # ДЕЛАЕМ ПАУЗУ НА 3 СЕК ЧТОБЫ ПРОГРУЗИЛАСЬ СТРАНИЦА С ТОВАРОМ
         time.sleep(3)
 
         # МЕНЯЕМ МЕТОД ДОСТАВКИ НА "САМОВЫВОЗ"
